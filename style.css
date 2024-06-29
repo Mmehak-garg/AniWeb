@@ -8,6 +8,7 @@
 html,body{
     height: 100%;
     width: 100%;
+    transition: all ease 0.65s;
 }
 
 nav{
@@ -64,25 +65,54 @@ nav h1{
     z-index: 9;
     /* margin-top: 1%; */
     border-bottom: 1px solid #fff;  
+    transition: all ease 0.65s;
 }
-
-nav button{
-    background-color: #0BA347;
+#NavTalk {
+    width: 9.7vw;
+    height: 2.5vw;
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
-    padding: 14px 20px;
-    border-radius: 50px;
-    text-transform: uppercase;
-    font-size: 0.85vw;
-    font-weight: 700;
-    border: none;
-}
-nav button svg{
-    height: 0.8vw;
-    margin-left: 1.6vw;
+    justify-content: flex-end;
+    gap: 1.5vw;
+    position: relative;
+    cursor: pointer;
+    padding: 0.75vw 0.95vw;
+    padding-left: 2vw;
+    transition: all ease 0.65s;
+    border-radius: 25vw;
+    background-color: #0DA34E;
 }
 
+#NavTalk h2 {
+    font-size: 0.85vw;
+    font-weight: 700;
+    font-family: Gilroy-Medium;
+    text-transform: uppercase;
+    transition: all ease 0.65s;
+    text-wrap: nowrap;
+}
+
+#NavTalk span svg {
+    width: 1vw;
+    height: 1vw;
+}
+
+#Cursor {
+    width: 1vw;
+    height: 1vw;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(70%, -70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 999;
+    background-color: white;
+    mix-blend-mode: difference;
+    transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
 
 #page1{
     height: 100vh;
@@ -94,6 +124,7 @@ nav button svg{
     justify-content: center;
     position: relative;
     z-index: 1;
+    transition: all ease 0.65s;
 }
 #page1 h1{
     font-size: 8.5vw;
@@ -107,6 +138,7 @@ nav button svg{
     width: 6vw;
     border-radius: 50%;
     background-color: #0BA34E;
+    transition: all ease 0.35s;
 }
 #page1 p{
     text-align: center;
@@ -650,13 +682,13 @@ summary::marker{
     height: 44vh;
     width: 100%;
     /* background-color: #0BA34E; */
-    border: 1px solid #dadada;
+    border-top: 1px solid #dadada;
     display: flex;
     align-items: flex-start;
     justify-content: center;
 }
 #btn8-part1{
-    border-right: 1px solid #dadada;
+    /* border-right: 1px solid #dadada; */
     width: 30%;
     /* background-color: #4f5bff; */
     height: 100%;
@@ -734,9 +766,40 @@ summary::marker{
 #btn8-part2 h4:nth-child(7){
     transform: translateX(50%);
 }
-
+#btn8-part3 h4:nth-child(2){
+    transform: translateX(0%);
+}
+#btn8-part3 h4:nth-child(3){
+    transform: translateX(20%);
+}
+#btn8-part4 h4:nth-child(2){
+    transform: translateX(0);
+}
+#btn8-part4 h4:nth-child(3){
+    transform: translateX(20%);
+}
+#btn8-part4 h4:nth-child(4){
+    transform: translateX(40%);
+}
 #page9{
     height: 100vh;
     background-color:#111;
     width: 100%;
+}
+
+.scroll-indicator{
+    height: 1px;
+    width: calc(100% - 18vw);
+    top: 1.3vh;
+    position: fixed;
+    left: 7vw;
+    border-radius: 3px;
+    z-index: 20;
+}
+.scroll-indicator .progress{
+    height: 100%;
+    width: 0%;
+    border-radius: 3px;
+    background:#0BA347;
+    transition: width 0.1s;
 }

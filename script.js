@@ -77,6 +77,22 @@ nav.addEventListener("mouseleave",function(){
     })
  })
 }
+
+function page1SVG(){
+    let h1Pen = document.querySelector("#page1 h1 svg");
+
+    setTimeout(function () {
+      h1Pen.style.transform = "rotate(0deg) scale(1)";
+    }, 8700)
+    
+    h1Pen.addEventListener("mouseover", function () {
+      h1Pen.style.transform = "rotate(-30deg) scale(0.85)";
+    });
+    
+    h1Pen.addEventListener("mouseleave", function () {
+      h1Pen.style.transform = "rotate(0deg) scale(1)";
+    });
+}
 function page2Animation(){
     var rightElems = document.querySelectorAll(".right-elem");
 
@@ -167,6 +183,30 @@ function scrollAni(){
             scrub:true
         }
     })
+    gsap.from("#btn8-part3 h4",{
+        x:0,
+        duration:1,
+        scrollTrigger:{
+            trigger:"#btn8-part3",
+            scroller:"#main",
+            // markers:true,
+            start:"top 80%",
+            end:"top 10%",
+            scrub:true
+        }
+    })
+    gsap.from("#btn8-part4 h4",{
+        x:0,
+        duration:1,
+        scrollTrigger:{
+            trigger:"#btn8-part4",
+            scroller:"#main",
+            // markers:true,
+            start:"top 80%",
+            end:"top 10%",
+            scrub:true
+        }
+    })
 }
 function loadingAnimation() {
 
@@ -192,12 +232,37 @@ function loadingAnimation() {
         stagger: 0.2
     })
 }
+ 
 
-loadingAnimation();
+let container = document.querySelector("#main");
+let cursor = document.querySelector("#Cursor");
 
-locomotiveAnimation()
-navAnimation();
-page2Animation();
-page3video();
-videoAni();
-scrollAni();
+container.addEventListener("mousemove", function (details) {
+  cursor.style.left = details.x + "px";
+  cursor.style.top = details.y + "px";
+});
+let Page1 = document.querySelector("#page1");
+let nav = document.querySelector("nav");
+
+Page1.addEventListener("mouseenter", function () {
+  cursor.style.display = "flex";
+  nav.style.height = "7.25vw";
+})
+
+Page1.addEventListener("mouseleave", function () {
+  cursor.style.display = "none";
+  nav.style.height = "6vw";
+
+})
+
+page1SVG();
+navButton();
+
+// loadingAnimation();
+
+// locomotiveAnimation()
+// navAnimation();
+// page2Animation();
+// page3video();
+// videoAni();
+// scrollAni();
