@@ -258,11 +258,11 @@ Page1.addEventListener("mouseleave", function () {
 page1SVG();
 navButton();
 
-// loadingAnimation();
+loadingAnimation();
 
-// locomotiveAnimation()
-// navAnimation();
-// page2Animation();
-// page3video();
-// videoAni();
-// scrollAni();
+locomotiveAnimation()
+navAnimation();
+page2Animation();
+page3video();
+videoAni();
+scrollAni();
