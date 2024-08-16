@@ -252,43 +252,12 @@ navtalk.addEventListener("mouseleave", function () {
 })
 }
 
-function breakText() {
-    var h3 = document.querySelector("h3.downUp");
-    var h3Text = h3.textContent;
-    var splittedText = h3Text.split(" ");
-    var clutter = "";
 
-    splittedText.forEach(function(e) {
-        clutter += `<span class="word">${e}</span>`;
-    });
-
-    h3.innerHTML = clutter;
-}
-
-// function ani(){
-//     breakText();
-
-//     gsap.from("h3.downUp .word", {
-//         y: 12,   // Animate from 150px below
-//         opacity: 1,   // Start with 0 opacity
-//         duration: 0.8, // Duration of animation for each word
-//         delay: 1,   // Delay before the animation starts
-//         stagger: 0.15 // Stagger the animation between each word
-//     });
-// }
-// ani();
 
 locomotiveAnimation();
 loadingAnimation();
 page1SVG();
 navButton();
-<<<<<<< HEAD
-=======
-
-loadingAnimation();
-
-locomotiveAnimation()
->>>>>>> a601b738d6282af41add13805aa31bac6e7c033a
 navAnimation();
 page2Animation();
 page3video();
