@@ -252,10 +252,51 @@ navtalk.addEventListener("mouseleave", function () {
 })
 }
 
+function sucess(){
+    gsap.from("#page4-left h3 span",{
+        opacity:0,
+        duration:0.5,
+        x:30,
+        stagger:0.5,
+        repeat:-1,
+        yoyo:true,
+    })
+    
+}
+
+function digital(){
+    gsap.from("#page8>h1",{
+        opacity:0.2,
+        duration:0.5,
+        y:30,
+        repeat:-1,
+        yoyo:true,
+    })
+    
+}
+function height(){
+    var pg1 = document.querySelector("#page1");
+    var nv = document.querySelector("nav");
+    nv.addEventListener("mouseenter", function() {
+        nv.style.height = "15vh";
+        nv.style.padding= "2vw 10.4vw";
+    });
+    pg1.addEventListener("mouseenter", function() {
+        nv.style.height = "15vh";
+        nv.style.padding = "2vw 10.4vw";
+    });
+    pg1.addEventListener("mouseleave", function() {
+        nv.style.height = "10vh";
+        nv.style.padding = "1vw 10.4vw";
+    });
+}
 
 
 locomotiveAnimation();
 loadingAnimation();
+height();
+digital();
+sucess();
 page1SVG();
 navButton();
 navAnimation();
